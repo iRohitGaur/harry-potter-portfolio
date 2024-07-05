@@ -1,0 +1,26 @@
+.footer-wrapper {
+  background: var(--primary-color);
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+footer {
+  color: var(--secondary-color);
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+}
+
+footer .container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  footer {
+    position: static;
+  }
+}

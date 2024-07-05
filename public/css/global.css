@@ -1,0 +1,47 @@
+/* Reset some basic elements */
+body,
+h1,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Garamond", serif;
+  line-height: 1.6;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0 auto;
+}
+
+/* Main content styles */
+main {
+  margin: 0 auto;
+  padding: 20px 0;
+  max-width: var(--max-width);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  header .name h1 {
+    font-size: 1.5em;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    margin-right: 0;
+  }
+
+  header nav ul li {
+    margin: 10px 0;
+  }
+
+  footer {
+    padding: 10px;
+  }
+
+  main {
+    padding: 10px 0;
+  }
+}

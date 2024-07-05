@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harry Potter's Portfolio</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <% if (page === 'home') { %>
+    <link rel="stylesheet" href="/css/home.css" />
+    <% } else if (page === 'about') { %>
+    <link rel="stylesheet" href="/css/about.css" />
+    <% } else if (page === 'projects') { %>
+    <link rel="stylesheet" href="/css/projects.css" />
+    <% } else if (page === 'contact') { %>
+    <link rel="stylesheet" href="/css/contact.css" />
+    <% } %>
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <header>
+        <div class="container">
+          <div class="name">
+            <h1>Harry Potter</h1>
+          </div>
+          <nav>
+            <div class="burger-menu">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+            <ul id="nav-links">
+              <li>
+                <a href="/" class="<%= page === 'home' ? 'active' : '' %>"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="/about" class="<%= page === 'about' ? 'active' : '' %>"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/projects"
+                  class="<%= page === 'projects' ? 'active' : '' %>"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/contact"
+                  class="<%= page === 'contact' ? 'active' : '' %>"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <main>
