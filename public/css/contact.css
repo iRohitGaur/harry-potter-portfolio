@@ -39,6 +39,14 @@ form button:hover {
   background: var(--highlight-color);
 }
 
+.message {
+  background: var(--highlight-color);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
   .contact {
