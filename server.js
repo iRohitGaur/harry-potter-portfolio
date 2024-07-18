@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const { sendTelegramNotification } = require("./utils/telegram");
 const port = 3000;
 
 app.set("view engine", "ejs");
@@ -30,10 +31,11 @@ app.post("/contact", (req, res) => {
   console.log(
     `Received contact form submission: ${name}, ${email}, ${message}`
   );
+  sendTelegramNotification(name, email, message);
   res.render("pages/contact", {
     page: "contact",
     message:
-      "Your owl has been sent to Hogwarts. Harry will respond to your message as soon as possible. Stay magical!",
+      "Hedwig is taking your message to Hogwarts. Harry will respond as soon as possible. Stay magical!",
   });
 });
 
