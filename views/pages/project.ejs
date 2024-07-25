@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+
+<link rel="stylesheet" href="/css/project.css" />
+
+<section class="project-details">
+  <h2><%= project.title %></h2>
+  <img src="<%= project.image %>" alt="<%= project.title %>" />
+  <p><%= project.description %></p>
+  <p>Technologies: <%= project.technologies.join(', ') %></p>
+  <form
+    action="/projects/<%= project._id %>/edit"
+    method="get"
+    style="display: inline"
+  >
+    <button type="submit" class="btn btn-secondary">Edit</button>
+  </form>
+  <form
+    action="/projects/<%= project._id %>?_method=DELETE"
+    method="post"
+    style="display: inline"
+  >
+    <button type="submit" class="btn btn-secondary">Delete</button>
+  </form>
+</section>
+
+<%- include('../partials/footer') %>
