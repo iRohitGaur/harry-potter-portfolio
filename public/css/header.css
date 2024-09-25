@@ -68,6 +68,30 @@ header nav ul li a.active {
   margin: 4px 0;
 }
 
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: var(--secondary-color);
+  background: var(--primary-color);
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+}
+
+.btn-secondary {
+  background: var(--highlight-color);
+}
+
+.btn-danger {
+  background: #7f1a1a;
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
   .burger-menu {
