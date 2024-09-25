@@ -4,7 +4,9 @@
 
 <section class="projects">
   <h2>Projects</h2>
+  <% if (user) { %>
   <a href="/projects/new" class="btn btn-primary">Add New Project</a>
+  <% } %>
   <div class="project-grid">
     <% projects.forEach(project => { %>
     <div class="project-card">

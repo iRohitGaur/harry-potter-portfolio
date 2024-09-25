@@ -29,11 +29,16 @@ header nav {
 header nav ul {
   list-style: none;
   display: flex;
+  align-items: center;
   margin-right: 20px;
 }
 
 header nav ul li {
   margin: 0 15px;
+}
+
+header nav ul .logout a {
+  margin-bottom: 0;
 }
 
 header nav ul li a {

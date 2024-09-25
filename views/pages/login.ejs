@@ -1,0 +1,31 @@
+<%- include('../partials/header') %>
+
+<link rel="stylesheet" href="/css/login.css" />
+
+<section class="login">
+  <h2>Login</h2>
+  <% if (typeof error !== 'undefined') { %>
+  <p class="error"><%= error %></p>
+  <% } %>
+  <form action="/auth/login" method="POST">
+    <input
+      type="text"
+      id="username"
+      name="username"
+      placeholder="Username"
+      required
+    />
+
+    <input
+      type="password"
+      id="password"
+      name="password"
+      placeholder="Password"
+      required
+    />
+
+    <button type="submit">Login</button>
+  </form>
+</section>
+
+<%- include('../partials/footer') %>

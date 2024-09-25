@@ -2,6 +2,15 @@ const express = require("express");
 const router = express.Router();
 const Project = require("../models/Project");
 
+// Middleware to check if user is logged in
+function isLoggedIn(req, res, next) {
+  if (req.session && req.session.user) {
+    next();
+  } else {
+    res.redirect("/auth/login");
+  }
+}
+
 // Get all projects
 router.get("/", async (req, res) => {
   const projects = await Project.find({});
@@ -9,12 +18,12 @@ router.get("/", async (req, res) => {
 });
 
 // Get form to create a new project
-router.get("/new", (req, res) => {
+router.get("/new", isLoggedIn, (req, res) => {
   res.render("pages/newProject", { page: "newProject" });
 });
 
 // Create a new project
-router.post("/", async (req, res) => {
+router.post("/", isLoggedIn, async (req, res) => {
   const { title, description, image, technologies } = req.body;
   const project = new Project({
     title,
@@ -33,13 +42,13 @@ router.get("/:id", async (req, res) => {
 });
 
 // Get form to edit a project
-router.get("/:id/edit", async (req, res) => {
+router.get("/:id/edit", isLoggedIn, async (req, res) => {
   const project = await Project.findById(req.params.id);
   res.render("pages/editProject", { page: "project", project });
 });
 
 // Update a project
-router.put("/:id", async (req, res) => {
+router.put("/:id", isLoggedIn, async (req, res) => {
   const { title, description, image, technologies } = req.body;
   await Project.findByIdAndUpdate(req.params.id, {
     title,
@@ -51,7 +60,7 @@ router.put("/:id", async (req, res) => {
 });
 
 // Delete a project
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", isLoggedIn, async (req, res) => {
   await Project.findByIdAndDelete(req.params.id);
   res.redirect("/projects");
 });

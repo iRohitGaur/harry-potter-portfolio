@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="/css/projects.css" />
     <% } else if (page === 'contact') { %>
     <link rel="stylesheet" href="/css/contact.css" />
+    <% } else if (page === 'login') { %>
+    <link rel="stylesheet" href="/css/login.css" />
+    <% } else if (page === 'register') { %>
+    <link rel="stylesheet" href="/css/register.css" />
     <% } %>
   </head>
   <body>
@@ -53,6 +57,11 @@
                   >Contact</a
                 >
               </li>
+              <% if (user) { %>
+              <li class="logout">
+                <a href="/auth/logout" class="btn btn-danger">Logout</a>
+              </li>
+              <% } %>
             </ul>
           </nav>
         </div>
